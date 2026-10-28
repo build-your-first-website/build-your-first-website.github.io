@@ -5,6 +5,8 @@ date: 2026-05-14
 ---
 I'd like to leave enough time to explore without rushing.
 
+![A drawing of a wooden bench beside a tree in blossom.](./bench.jpg)
+
 ## Before I go
 
 - Choose one thing I'd really like to see.

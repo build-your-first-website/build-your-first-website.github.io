@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import SiteLayout from "../layouts/SiteLayout.astro";
+import LinkCard from "../components/LinkCard.astro";
 
 const notes = await getCollection("notes");
 notes.sort((first, second) => second.data.date.getTime() - first.data.date.getTime());
@@ -11,10 +12,12 @@ notes.sort((first, second) => second.data.date.getTime() - first.data.date.getTi
   <h2>All notes</h2>
   <ul class="card-grid" role="list">
     {notes.map((note) => (
-      <li class="card">
-        <h3>{note.data.title}</h3>
-        <p>{note.data.description}</p>
-      </li>
+      <LinkCard
+        heading={note.data.title}
+        description={note.data.description}
+        href={"/notes/" + note.id + ".html"}
+        linkText="Read this note"
+      />
     ))}
   </ul>
 </SiteLayout>

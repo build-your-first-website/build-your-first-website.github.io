@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+
+interface Props {
+  entry: CollectionEntry<"notes">;
+}
+
+export async function getStaticPaths() {
+  const notes = await getCollection("notes");
+  return notes.map((note) => ({
+    params: { id: note.id },
+    props: { entry: note }
+  }));
+}
+
+const entry = Astro.props.entry;
+const { Content } = await render(entry);
+const date = entry.data.date;
+---
+<SiteLayout title={entry.data.title + " - Places I want to visit"}>
+  <h1>{entry.data.title}</h1>
+  <p>
+    <time datetime={date.toISOString()}>
+      {date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}
+    </time>
+  </p>
+  <Content />
+  <p><a href="/notes.html">Back to the notes</a></p>
+</SiteLayout>
