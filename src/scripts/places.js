@@ -1,10 +1,21 @@
-let count = 0;
+let places = [];
 
 function describeCount() {
-  if (count === 1) {
+  if (places.length === 1) {
     return "You have 1 place on your list.";
   } else {
-    return "You have " + count + " places on your list.";
+    return "You have " + places.length + " places on your list.";
+  }
+}
+
+function showPlaces() {
+  const list = document.getElementById("places");
+  list.replaceChildren();
+
+  for (const place of places) {
+    const item = document.createElement("li");
+    item.textContent = place;
+    list.append(item);
   }
 }
 
@@ -20,15 +31,14 @@ function addPlace(event) {
     return;
   }
 
-  const item = document.createElement("li");
-  item.textContent = placeName;
-  document.getElementById("places").append(item);
-  count = count + 1;
+  places.push(placeName);
+  showPlaces();
+
   document.getElementById("list-message").textContent =
     "Added " + placeName + ". " + describeCount();
-
   input.value = "";
   input.focus();
 }
 
 document.getElementById("place-form").addEventListener("submit", addPlace);
+showPlaces();
