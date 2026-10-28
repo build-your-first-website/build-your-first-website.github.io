@@ -1,24 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Favourites - Places I want to visit</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="favicon.svg">
-</head>
-<body>
-<header>
-  <p class="site-name">Places I want to visit</p>
-  <nav>
-    <ul class="site-navigation">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="favourites.html">Favourites</a></li>
-    </ul>
-  </nav>
-</header>
-<main>
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+<SiteLayout title="Favourites - Places I want to visit">
   <h1>My favourites</h1>
   <p>A few places I've already been, and would happily visit again.</p>
   <h2>Places I'd go back to</h2>
@@ -37,9 +20,4 @@
     </li>
   </ul>
   <p class="note">A note: I'll add more favourites as I travel.</p>
-</main>
-<footer class="site-footer">
-  <p>I'm building this website as I learn HTML and CSS.</p>
-</footer>
-</body>
-</html>
+</SiteLayout>
