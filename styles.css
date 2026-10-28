@@ -29,6 +29,21 @@ h2 {
   flex-wrap: wrap;
 }
 
+.site-navigation a {
+  display: block;
+  padding: 0.5rem;
+  color: darkgreen;
+}
+
+.site-navigation a:hover {
+  background-color: lightyellow;
+}
+
+a:focus-visible {
+  outline: 2px solid darkgreen;
+  outline-offset: 3px;
+}
+
 .note {
   background-color: lightyellow;
   color: black;
