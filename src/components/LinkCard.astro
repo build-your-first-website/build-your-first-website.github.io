@@ -1,4 +1,11 @@
 ---
+interface Props {
+  heading: string;
+  description: string;
+  href: string;
+  linkText: string;
+}
+
 const heading = Astro.props.heading;
 const description = Astro.props.description;
 const href = Astro.props.href;
