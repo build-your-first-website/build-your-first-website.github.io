@@ -14,3 +14,14 @@ h1 {
 h2 {
   margin-top: 2rem;
 }
+
+.note {
+  background-color: lightyellow;
+  color: black;
+  padding: 1rem;
+  border-left: 4px solid darkgreen;
+}
+
+.introduction {
+  font-size: 1.25rem;
+}
