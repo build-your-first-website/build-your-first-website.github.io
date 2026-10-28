@@ -35,6 +35,13 @@ h2 {
 
 /* Navigation */
 
+.skip-link {
+  display: inline-block;
+  padding: var(--space-small);
+  color: var(--color-accent);
+  background-color: var(--color-highlight);
+}
+
 .site-name {
   font-size: 1.25rem;
   font-weight: bold;
