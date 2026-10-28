@@ -4,8 +4,14 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 <SiteLayout title="My wishlist - Places I want to visit">
   <h1>My wishlist</h1>
   <p>Keep a list of places you'd like to visit. It stays in your own browser.</p>
-  <button id="greet" type="button">Say hello</button>
-  <p id="message" role="status">Nothing has happened yet.</p>
+  <form id="place-form">
+    <label for="place-name">Place name</label>
+    <input id="place-name" name="place" type="text"
+           aria-describedby="list-message">
+    <button type="submit">Add place</button>
+  </form>
+  <p id="list-message" role="status"></p>
+  <ul id="places"></ul>
   <script>
     import "../scripts/places.js";
   </script>
