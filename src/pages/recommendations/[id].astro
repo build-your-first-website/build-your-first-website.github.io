@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+
+interface Props {
+  entry: CollectionEntry<"recommendations">;
+}
+
+export async function getStaticPaths() {
+  const recommendations = await getCollection("recommendations");
+  return recommendations.map((recommendation) => ({
+    params: { id: recommendation.id },
+    props: { entry: recommendation }
+  }));
+}
+
+const entry = Astro.props.entry;
+const { Content } = await render(entry);
+---
+<SiteLayout title={entry.data.title + " - Places I want to visit"}>
+  <div class="recommendation">
+    <h1>{entry.data.title}</h1>
+    <div class="prose">
+      <Content />
+    </div>
+    <p><a href="/recommendations.html">Back to the recommendations</a></p>
+  </div>
+</SiteLayout>

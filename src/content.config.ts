@@ -11,4 +11,16 @@ const notes = defineCollection({
   })
 });
 
-export const collections = { notes: notes };
+const recommendations = defineCollection({
+  loader: glob({ base: "./src/content/recommendations", pattern: "*.md" }),
+  schema: z.object({
+    title: z.string().min(1),
+    description: z.string().min(1),
+    order: z.number().int().positive()
+  })
+});
+
+export const collections = {
+  notes: notes,
+  recommendations: recommendations
+};

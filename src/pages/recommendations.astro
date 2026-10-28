@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import LinkCard from "../components/LinkCard.astro";
+
+const recommendations = await getCollection("recommendations");
+recommendations.sort((first, second) => first.data.order - second.data.order);
+---
+<SiteLayout title="Recommendations - Places I want to visit">
+  <h1>Recommendations</h1>
+  <p>A place, a book and a recipe I'd happily recommend to anyone.</p>
+  <h2>The recommendations</h2>
+  <ul class="card-grid" role="list">
+    {recommendations.map((entry) => (
+      <LinkCard
+        heading={entry.data.title}
+        description={entry.data.description}
+        href={"/recommendations/" + entry.id + ".html"}
+        linkText="Read this recommendation"
+      />
+    ))}
+  </ul>
+</SiteLayout>
