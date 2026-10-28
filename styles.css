@@ -1,8 +1,16 @@
 body {
   font-family: sans-serif;
   line-height: 1.6;
+  padding: 1rem;
+  box-sizing: border-box;
+  max-width: 40rem;
+  margin: 1rem auto;
 }
 
 h1 {
   color: darkgreen;
+}
+
+h2 {
+  margin-top: 2rem;
 }
