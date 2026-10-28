@@ -15,6 +15,11 @@ h2 {
   margin-top: 2rem;
 }
 
+.site-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
 .note {
   background-color: lightyellow;
   color: black;
@@ -24,4 +29,10 @@ h2 {
 
 .introduction {
   font-size: 1.25rem;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid darkgreen;
 }
