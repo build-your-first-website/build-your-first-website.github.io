@@ -15,4 +15,5 @@ I'd like to leave enough time to explore without rushing.
 
 ## Something to remember
 
-I don't have to fit everything into one day.
+I don't have to fit everything into one day. The
+[National Trust's days out ideas](https://www.nationaltrust.org.uk/visit) are a good place to start.

@@ -26,6 +26,8 @@ const date = entry.data.date;
       {date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}
     </time>
   </p>
-  <Content />
+  <div class="prose">
+    <Content />
+  </div>
   <p><a href="/notes.html">Back to the notes</a></p>
 </SiteLayout>
