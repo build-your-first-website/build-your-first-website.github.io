@@ -217,6 +217,11 @@ button:hover {
   overflow-wrap: anywhere;
 }
 
+.place-list button {
+  margin-left: var(--space-small);
+  padding: var(--space-small);
+}
+
 /* Dark theme */
 
 @media (prefers-color-scheme: dark) {

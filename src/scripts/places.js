@@ -13,11 +13,19 @@ function showPlaces() {
   const list = document.getElementById("places");
   list.replaceChildren();
 
-  for (const place of places) {
+  places.forEach((place, index) => {
     const item = document.createElement("li");
     item.textContent = place;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = "Remove";
+    button.setAttribute("aria-label", "Remove " + place);
+    button.addEventListener("click", () => removePlace(index));
+
+    item.append(" ", button);
     list.append(item);
-  }
+  });
 }
 
 function savePlaces() {
@@ -60,6 +68,17 @@ function addPlace(event) {
     "Added " + placeName + ". " + describeCount();
   input.value = "";
   input.focus();
+}
+
+function removePlace(index) {
+  const removed = places[index];
+  places.splice(index, 1);
+  showPlaces();
+  savePlaces();
+
+  document.getElementById("list-message").textContent =
+    "Removed " + removed + ". " + describeCount();
+  document.getElementById("place-name").focus();
 }
 
 function forgetPlaces() {
