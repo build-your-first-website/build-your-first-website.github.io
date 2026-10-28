@@ -1,6 +1,8 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import LinkCard from "../components/LinkCard.astro";
+import { Image } from "astro:assets";
+import garden from "../assets/garden.jpg";
 
 const cards = [
   {
@@ -27,9 +29,13 @@ const cards = [
   <h1>Places I want to visit</h1>
   <p class="introduction">Some of the places I'd like to see, and why.</p>
   <figure>
-    <img src="/garden.jpg"
-         alt="A drawing of a tree in blossom, standing on a green lawn under a blue sky."
-         width="1200" height="800">
+    <Image
+      src={garden}
+      alt="A drawing of a tree in blossom, standing on a green lawn under a blue sky."
+      width={960}
+      format="webp"
+      loading="eager"
+    />
     <figcaption>The kind of tree I'd like to sit under for an afternoon.</figcaption>
   </figure>
   <h2>Places on my list</h2>
