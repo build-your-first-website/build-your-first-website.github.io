@@ -1,0 +1,11 @@
+---
+const heading = Astro.props.heading;
+const description = Astro.props.description;
+const href = Astro.props.href;
+const linkText = Astro.props.linkText;
+---
+<li class="card">
+  <h3>{heading}</h3>
+  <p>{description}</p>
+  <p><a href={href}>{linkText}</a></p>
+</li>
