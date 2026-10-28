@@ -19,7 +19,10 @@ const entry = Astro.props.entry;
 const { Content } = await render(entry);
 const date = entry.data.date;
 ---
-<SiteLayout title={entry.data.title + " - Places I want to visit"}>
+<SiteLayout
+  title={entry.data.title + " - Places I want to visit"}
+  description={entry.data.description}
+>
   <h1>{entry.data.title}</h1>
   <p>
     <time datetime={date.toISOString()}>

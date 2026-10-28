@@ -18,7 +18,10 @@ export async function getStaticPaths() {
 const entry = Astro.props.entry;
 const { Content } = await render(entry);
 ---
-<SiteLayout title={entry.data.title + " - Places I want to visit"}>
+<SiteLayout
+  title={entry.data.title + " - Places I want to visit"}
+  description={entry.data.description}
+>
   <div class="recommendation">
     <h1>{entry.data.title}</h1>
     <div class="prose">

@@ -6,7 +6,10 @@ import LinkCard from "../components/LinkCard.astro";
 const recommendations = await getCollection("recommendations");
 recommendations.sort((first, second) => first.data.order - second.data.order);
 ---
-<SiteLayout title="Recommendations - Places I want to visit">
+<SiteLayout
+  title="Recommendations - Places I want to visit"
+  description="A place, a book and a recipe I'd recommend to anyone."
+>
   <h1>Recommendations</h1>
   <p>A place, a book and a recipe I'd happily recommend to anyone.</p>
   <div id="recommendation-filter" class="collection-filter" hidden>

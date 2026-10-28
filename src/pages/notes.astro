@@ -6,7 +6,10 @@ import LinkCard from "../components/LinkCard.astro";
 const notes = await getCollection("notes");
 notes.sort((first, second) => second.data.date.getTime() - first.data.date.getTime());
 ---
-<SiteLayout title="Notes - Places I want to visit">
+<SiteLayout
+  title="Notes - Places I want to visit"
+  description="Short notes about planning days out."
+>
   <h1>Notes</h1>
   <p>Ideas for getting out and exploring.</p>
   <h2>All notes</h2>
