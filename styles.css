@@ -1,6 +1,7 @@
 /* Shared values */
 
 :root {
+  color-scheme: light dark;
   --color-text: #1a1a1a;
   --color-background: #ffffff;
   --color-accent: darkgreen;
@@ -66,7 +67,7 @@ a:focus-visible {
 
 .note {
   background-color: var(--color-highlight);
-  color: black;
+  color: var(--color-text);
   padding: var(--space-medium);
   border-left: 4px solid var(--color-accent);
 }
@@ -118,5 +119,16 @@ figure {
 @media (min-width: 36rem) {
   .card-grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Dark theme */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #e8e8e8;
+    --color-background: #161616;
+    --color-accent: #7ccf7c;
+    --color-highlight: #33331a;
   }
 }
