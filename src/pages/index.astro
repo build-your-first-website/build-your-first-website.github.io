@@ -1,6 +1,27 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import LinkCard from "../components/LinkCard.astro";
+
+const cards = [
+  {
+    heading: "My visit plans",
+    description: "Where I'd like to go next, and what I'd like to do there.",
+    href: "/visit.html",
+    linkText: "Read my visit plans"
+  },
+  {
+    heading: "A day in York",
+    description: "Walls, museums and far too many tea rooms.",
+    href: "https://visityork.org/",
+    linkText: "Plan a visit"
+  },
+  {
+    heading: "About this project",
+    description: "Find out why I'm building this website.",
+    href: "/about.html",
+    linkText: "Read about this website"
+  }
+];
 ---
 <SiteLayout title="Places I want to visit">
   <h1>Places I want to visit</h1>
@@ -26,18 +47,14 @@ import LinkCard from "../components/LinkCard.astro";
       <h3>A quiet garden</h3>
       <p>Somewhere to sit and do nothing for an afternoon.</p>
     </li>
-    <LinkCard
-      heading="A day in York"
-      description="Walls, museums and far too many tea rooms."
-      href="https://visityork.org/"
-      linkText="Plan a visit"
-    />
-    <LinkCard
-      heading="About this project"
-      description="Find out why I'm building this website."
-      href="/about.html"
-      linkText="Read about this website"
-    />
+    {cards.map((card) => (
+      <LinkCard
+        heading={card.heading}
+        description={card.description}
+        href={card.href}
+        linkText={card.linkText}
+      />
+    ))}
   </ul>
   <p class="note">A note: this website is a work in progress.</p>
 </SiteLayout>
