@@ -6,6 +6,7 @@
   --color-background: #ffffff;
   --color-accent: darkgreen;
   --color-highlight: lightyellow;
+  --color-accent-hover: navy;
   --space-small: 0.5rem;
   --space-medium: 1rem;
   --space-large: 2rem;
@@ -58,7 +59,9 @@ h2 {
   background-color: var(--color-highlight);
 }
 
-a:focus-visible {
+a:focus-visible,
+input:focus-visible,
+button:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
@@ -167,6 +170,53 @@ figure {
   border-bottom: 4px solid var(--color-accent);
 }
 
+/* Forms */
+
+input,
+button {
+  font: inherit;
+}
+
+.place-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: var(--space-small);
+}
+
+.place-form input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  padding: 0.75rem;
+  margin-bottom: var(--space-medium);
+  border: 2px solid var(--color-accent);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+button {
+  padding: 0.75rem var(--space-medium);
+  border: 2px solid var(--color-accent);
+  color: var(--color-background);
+  background-color: var(--color-accent);
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: var(--color-accent-hover);
+  background-color: var(--color-accent-hover);
+}
+
+.place-message {
+  min-height: 1.6em;
+}
+
+.place-list li {
+  padding: var(--space-small) 0;
+  overflow-wrap: anywhere;
+}
+
 /* Dark theme */
 
 @media (prefers-color-scheme: dark) {
@@ -175,5 +225,6 @@ figure {
     --color-background: #161616;
     --color-accent: #7ccf7c;
     --color-highlight: #33331a;
+    --color-accent-hover: #a8c8ff;
   }
 }
