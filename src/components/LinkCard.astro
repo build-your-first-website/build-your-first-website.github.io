@@ -4,14 +4,16 @@ interface Props {
   description: string;
   href: string;
   linkText: string;
+  searchText?: string;
 }
 
 const heading = Astro.props.heading;
 const description = Astro.props.description;
 const href = Astro.props.href;
 const linkText = Astro.props.linkText;
+const searchText = Astro.props.searchText;
 ---
-<li class="card">
+<li class="card" data-search={searchText}>
   <h3>{heading}</h3>
   <p>{description}</p>
   <p><a href={href}>{linkText}</a></p>

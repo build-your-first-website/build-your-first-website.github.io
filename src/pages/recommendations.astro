@@ -9,14 +9,22 @@ recommendations.sort((first, second) => first.data.order - second.data.order);
 <SiteLayout title="Recommendations - Places I want to visit">
   <h1>Recommendations</h1>
   <p>A place, a book and a recipe I'd happily recommend to anyone.</p>
+  <div id="recommendation-filter" class="collection-filter" hidden>
+    <label for="recommendation-query">Filter recommendations</label>
+    <input id="recommendation-query" type="search"
+           aria-describedby="recommendation-help">
+    <p id="recommendation-help">Type part of a title or description.</p>
+    <p id="recommendation-count" role="status"></p>
+  </div>
   <h2>The recommendations</h2>
-  <ul class="card-grid" role="list">
+  <ul id="recommendation-list" class="card-grid" role="list">
     {recommendations.map((entry) => (
       <LinkCard
         heading={entry.data.title}
         description={entry.data.description}
         href={"/recommendations/" + entry.id + ".html"}
         linkText="Read this recommendation"
+        searchText={entry.data.title + " " + entry.data.description}
       />
     ))}
   </ul>

@@ -222,6 +222,26 @@ button:hover {
   padding: var(--space-small);
 }
 
+.collection-filter {
+  margin: var(--space-medium) 0;
+}
+
+.collection-filter label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: var(--space-small);
+}
+
+.collection-filter input {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 24rem;
+  padding: 0.75rem;
+  border: 2px solid var(--color-accent);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
 /* Dark theme */
 
 @media (prefers-color-scheme: dark) {
